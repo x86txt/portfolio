@@ -6,6 +6,8 @@
 ### &nbsp;
 ### Certifications:
 ### &nbsp;
+|   |   |   |   |
+|---|---|---|---|
 ### CISSP
 ### AWS
 ### VMware
