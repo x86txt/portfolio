@@ -151,7 +151,7 @@ ssh_authorized_key { 'matt_ssh_key':
   ensure => present,
   user   => 'matt',
   type   => 'ssh-ed25519',
-  key    => 'AAAAC3NzaC1lZDI1NTE5AAAAIIN7FM6SYloQXfxyFOekumtgUOLpyEFCJ09a6xXLh2I5',
+  key    => 'xxx',
 }
 
 file {'/home/matt/.zshrc':
@@ -177,11 +177,7 @@ ssh_authorized_key { 'prtg_ssh_key':
   user   => 'prtg',
   type   => 'ssh-rsa',
   key    => @(KEY/L),
-            AAAAB3NzaC1yc2EAAAADAQABAAABgQC4bSXjbe9k9jG8N9OAU1m/kHhgpft+w0oUDfFg04NVDaC6BucgtytxOochfd3VAhpRC8eJ1yIqxwi38f0aHuONt41X\
-            IKtFr9aWTZmbuJmiFIqs8rpHh5C+7jxLGG6+yTLCoFm6hzjP+6+YfEOoiTQFv4yZGeXuIywMoPApoGzzKoucg6svWbNNmOWLMhAhFwD/Jm4nPlIHXyZKHHFYl\
-            lwpV3avbn7zwaLC0R3rEL4P9zbjxVSVAVMjAJ85IbwgzrzuwiWcAB0G5+PDqmhYTvRyxANfveJOfQS0zrGvE5e6kLyrdSx9lFc3hcvOqlAwJ6f5vqeBa0f4ZOA\
-            w0gRqnPBqVSF24ceKaaolwt2lsTncub8f0PoWXlAkHGFMZLibkWxLsdO1zDMx0xA/kU7vFo+l7x35Avj87DDyWIiAI64EbAIpEnvZhK0iqk22BmsiO513p10lFGk\
-            /A+RloYJyd1yhy3zlJFL6WcwHurJ/RS/YY1PTUrTYaIpmKxOAfl33tp0=
+            xxx
             |-KEY
 }
 
