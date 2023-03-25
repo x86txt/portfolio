@@ -7,7 +7,7 @@
 ### Certifications:
 ### &nbsp;
 |   |   |   |   |
-|---|---|---|---|
+|![CISSP](https://secunit.io/images/cissp.png)|![AWS](https://secunit.io/images/aws.png)|![VMware](https://secunit.io/images/vmware.png)|![Network+](https://secunit.io/images/netplus.png)|
 ### CISSP
 ### AWS
 ### VMware
