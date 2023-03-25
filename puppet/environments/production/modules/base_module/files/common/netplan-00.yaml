@@ -1,0 +1,7 @@
+network:
+  ethernets:
+    ens33:
+      dhcp4: true
+      dhcp-identifier: mac
+      dhcp6: yes
+  version: 2

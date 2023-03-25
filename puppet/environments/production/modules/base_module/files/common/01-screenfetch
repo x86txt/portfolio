@@ -1,0 +1,4 @@
+#!/bin/zsh
+# show system info
+echo ""
+/usr/bin/screenfetch

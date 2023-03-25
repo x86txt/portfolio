@@ -1,0 +1,14 @@
+deb http://mirror.us.leaseweb.net/ubuntu/ubuntu/ focal main restricted universe multiverse
+# deb-src https://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+
+deb http://mirror.us.leaseweb.net/ubuntu/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://mirror.us.leaseweb.net/ubuntu/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://mirror.us.leaseweb.net/ubuntu/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+
+# deb http://mirror.us.leaseweb.net/ubuntu/ubuntu/ focal partner
+# deb-src http://archive.canonical.com/ubuntu/ focal partner
