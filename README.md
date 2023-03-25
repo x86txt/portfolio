@@ -1,4 +1,4 @@
-## This is a public portfolio of some of the DevOps languages I am well-versed in and an overview of my industry certifications.
+## This is a public portfolio of some of the DevOps languages I am well-versed in..
 
 ### Matthew Evans: <a href="https://secunit.io/resume.pdf">(shortform resume)</a> | <a href="https://secunit.io/resume-logform.pdf">(detailed resume)</a>
 ### &nbsp;
