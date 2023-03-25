@@ -1,1 +1,1 @@
-Just my internal network's puppet code.  
+This is a sanitized version of the Puppet code I use to manage and maintain my on-prem VMware homelab.
