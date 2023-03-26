@@ -13,3 +13,7 @@
   - create a public TLS certificate, set the TLS policy to the modern 2021 policy.
   - DNS validate the TLS certificate via a route 53 TXT entry.
   - create the necessary DNS entries for accessing the site via www.domain.com and domain.com.
+
+ - to-dos: modularize the code so you can deploy to dev, staging, and prod via tags.
+ - add a call to the Github repo to push the HTML code once the Terraform deploy is successful.
+ 
