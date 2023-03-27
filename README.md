@@ -1,7 +1,8 @@
 <p align="center">
 <b>March 25th, 2023:</b> this is a public portfolio of some of the DevOps languages I have experience with. It is and will always be, "a work in progress."</p><br />
 
-> :note: Improvement is a continuous cycle.
+| NOTE: Improvement is a continuous cycle. |
+| --- |
 
 ### Matthew Evans: <a href="https://secunit.io/resume.pdf">(shortform resume)</a> | <a href="https://secunit.io/resume-logform.pdf">(detailed resume)</a>
 ### &nbsp;
