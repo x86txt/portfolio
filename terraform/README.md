@@ -1,6 +1,6 @@
-## This is a simple S3 static site behind and ALB and Cloudfront. The ALB isn't necessary, but I wanted to include it for learning purposes, because they're used frequently.
+### This is a simple S3 static site behind and ALB and Cloudfront. The ALB isn't necessary, but I wanted to include it for learning purposes, because they're used frequently.
 
-## This code will do the following:
+**This code will do the following:** 
 
 - create an s3 bucket for Terraform project sharing locks.
 - create an s3 bucket and enable static website hosting.
