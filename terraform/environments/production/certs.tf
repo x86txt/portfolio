@@ -21,7 +21,15 @@ resource "aws_acm_certificate_validation" "devsec0ps_validate" {
   validation_record_fqdns = [aws_route53_record.devsec0ps_dns.fqdn]
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
+# really hacky way to echo custom message to console
+## see: https://stackoverflow.com/questions/66675106/is-there-a-way-to-add-comments-for-teraform-to-display-at-the-end-of-terraform
+resource "null_resource" "foo" {
+}
+
+output "acm_validation_timeout" {
+  value = "It could take upwards of 15 minutes for the ACM certificate to be validated."
+}
