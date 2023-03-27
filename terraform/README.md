@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./images/terraform.png" width="800" title="Terraform">
+</p>
 ### This is a simple S3 static site behind and ALB and Cloudfront. The ALB isn't necessary, but I wanted to include it for learning purposes, because they're used frequently.
 
 **This code will do the following:** 
