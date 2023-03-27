@@ -2,7 +2,8 @@
 <b>March 25th, 2023:</b> this is a public portfolio of some of the DevOps languages I have experience with. It is and will always be, "a work in progress."</p><br />
 
 > **Note**
-> Improvement is a continuous cycle.  
+> Improvement is a continuous cycle.
+  
 &nbsp;  
 &nbsp;  
 
