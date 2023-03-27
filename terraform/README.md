@@ -8,7 +8,7 @@
 
 **This code will do the following:** 
 
-- create an s3 bucket for Terraform project sharing locks.
+- create an s3 bucket for Terraform project shared locking.
 - create an s3 bucket and enable static website hosting.
 - create an s3 bucket to hold the ALB log files.
 - set cors, encryption, and versioning on the buckets.
