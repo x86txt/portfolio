@@ -13,6 +13,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "devsec0ps-static-
       kms_master_key_id = aws_kms_key.devsec0ps-static-site-kms.arn
       sse_algorithm     = "aws:kms"
     }
+
+    bucket_key_enabled = true
   }
 }
 
@@ -63,7 +65,7 @@ resource "aws_s3_bucket_cors_configuration" "devsec0ps-static-site" {
 # finally, let's create an s3 nucket for our alb logs
 resource "aws_s3_bucket" "devsec0ps-alb-logs" {
 
-  bucket = "devsec0ps-alb-logs"
+  bucket        = "devsec0ps-alb-logs"
   force_destroy = true
 
 }
@@ -77,6 +79,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "devsec0ps-alb-log
       kms_master_key_id = aws_kms_key.devsec0ps-alb-logs-kms.arn
       sse_algorithm     = "aws:kms"
     }
+
+    bucket_key_enabled = true
   }
 }
 

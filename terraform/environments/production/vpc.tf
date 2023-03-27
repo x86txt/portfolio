@@ -19,9 +19,9 @@ resource "aws_subnet" "public" {
   cidr_block = cidrsubnet(aws_vpc.devsec0ps-ninja.cidr_block, 4, each.value)
 
   tags = {
-    Name    = "devsec0ps-ninja-public-subnet"
-    Project = "devsec0ps.ninja"
-    Role    = "public"
+    Name      = "devsec0ps-ninja-public-subnet"
+    Project   = "devsec0ps.ninja"
+    Role      = "public"
     ManagedBy = "terraform"
     Subnet    = "${each.key}-${each.value}"
   }
@@ -37,9 +37,9 @@ resource "aws_subnet" "private" {
   cidr_block = cidrsubnet(aws_vpc.devsec0ps-ninja.cidr_block, 4, each.value)
 
   tags = {
-    Name    = "devsec0ps-ninja-private-subnet"
-    Project = "devsec0ps.ninja"
-    Role    = "private"
+    Name      = "devsec0ps-ninja-private-subnet"
+    Project   = "devsec0ps.ninja"
+    Role      = "private"
     ManagedBy = "terraform"
     Subnet    = "${each.key}-${each.value}"
   }

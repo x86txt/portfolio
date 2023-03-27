@@ -34,3 +34,8 @@ output "s3_website_endpoint" {
 output "public_tls_cert" {
   value = aws_acm_certificate.devsec0ps_certificate.arn
 }
+
+# output our registrar assigned name servers for our domain
+output "registrar_name_servers" {
+  value = aws_route53_zone.devsec0ps_zone.name_servers
+}

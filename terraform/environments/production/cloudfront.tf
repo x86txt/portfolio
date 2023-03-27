@@ -27,7 +27,7 @@ resource "aws_cloudfront_distribution" "www_s3_distribution" {
   }
 
   default_cache_behavior {
-    target_origin_id           = aws_s3_bucket.devsec0ps-static-site.id
+    target_origin_id           = aws_s3_bucket_website_configuration.devsec0ps-static-site.id
     allowed_methods            = ["GET"]
     cached_methods             = ["GET"]
     response_headers_policy_id = aws_cloudfront_response_headers_policy.security_headers_policy.id
