@@ -1,8 +1,11 @@
 <p align="center">
   <img src="./images/terraform.png" width="800" title="Terraform">
 </p>
-### This is a simple S3 static site behind and ALB and Cloudfront. The ALB isn't necessary, but I wanted to include it for learning purposes, because they're used frequently.
-
+&nbsp;  
+&nbsp;  
+> Example of a simple but organized way to provision a static site on AWS.  
+&nbsp;  
+&nbsp;  
 **This code will do the following:** 
 
 - create an s3 bucket for Terraform project sharing locks.
