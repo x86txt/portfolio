@@ -1,9 +1,7 @@
 <p align="center">
-  <img src="./images/terraform.png" width="800" title="Terraform">
+  <img src="./images/terraform.png" width="800" title="Terraform"><br />
+  <i>Example of a simple but organized way to provision a static site on AWS.</i>
 </p>  
-
-&nbsp;  
-> Example of a simple but organized way to provision a static site on AWS.  
 
 &nbsp;  
 &nbsp;  
