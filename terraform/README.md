@@ -1,11 +1,13 @@
 <p align="center">
   <img src="./images/terraform.png" width="800" title="Terraform">
-</p>
-&nbsp;  
+</p>  
+
 &nbsp;  
 > Example of a simple but organized way to provision a static site on AWS.  
+
 &nbsp;  
 &nbsp;  
+
 **This code will do the following:** 
 
 - create an s3 bucket for Terraform project sharing locks.
