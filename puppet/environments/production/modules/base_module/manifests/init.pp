@@ -151,7 +151,7 @@ ssh_authorized_key { 'matt_ssh_key':
   ensure => present,
   user   => 'matt',
   type   => 'ssh-ed25519',
-  key    => 'xxx',
+  key    => 'AAAAC3NzaC1lZDI1NTE5AAAAIIN7FM6SYloQXfxyFOekumtgUOLpyEFCJ09a6xXLh2I5',
 }
 
 file {'/home/matt/.zshrc':
@@ -177,7 +177,11 @@ ssh_authorized_key { 'prtg_ssh_key':
   user   => 'prtg',
   type   => 'ssh-rsa',
   key    => @(KEY/L),
-            xxx
+            AAAAB3NzaC1yc2EAAAADAQABAAABgQC4bSXjbe9k9jG8N9OAU1m/kHhgpft+w0oUDfFg04NVDaC6BucgtytxOochfd3VAhpRC8eJ1yIqxwi38f0aHuONt41X\
+            IKtFr9aWTZmbuJmiFIqs8rpHh5C+7jxLGG6+yTLCoFm6hzjP+6+YfEOoiTQFv4yZGeXuIywMoPApoGzzKoucg6svWbNNmOWLMhAhFwD/Jm4nPlIHXyZKHHFYl\
+            lwpV3avbn7zwaLC0R3rEL4P9zbjxVSVAVMjAJ85IbwgzrzuwiWcAB0G5+PDqmhYTvRyxANfveJOfQS0zrGvE5e6kLyrdSx9lFc3hcvOqlAwJ6f5vqeBa0f4ZOA\
+            w0gRqnPBqVSF24ceKaaolwt2lsTncub8f0PoWXlAkHGFMZLibkWxLsdO1zDMx0xA/kU7vFo+l7x35Avj87DDyWIiAI64EbAIpEnvZhK0iqk22BmsiO513p10lFGk\
+            /A+RloYJyd1yhy3zlJFL6WcwHurJ/RS/YY1PTUrTYaIpmKxOAfl33tp0=
             |-KEY
 }
 
@@ -377,6 +381,7 @@ tidy { 'puppet::reports':
   type    => 'ctime',
 }
 
+/*
 # ensure /root/.aws exists
 file {'/root/.aws':
   ensure => directory,
@@ -403,6 +408,7 @@ file {'/root/.aws/credentials':
   source  => 'puppet:///modules/base_module/common/aws/credentials',
   require => File['/root/.aws'],
 }
+*/
 
 # install cloudwatch deb file
 package {'amazon-cloudwatch-agent':
@@ -410,6 +416,7 @@ package {'amazon-cloudwatch-agent':
   source   => '/etc/puppet/code/environments/production/modules/base_module/files/common/aws/amazon-cloudwatch-agent.deb',
 }
 
+/*
 file {'/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json':
   ensure  => present,
   owner   => 'root',
@@ -417,12 +424,13 @@ file {'/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json':
   source  => 'puppet:///modules/base_module/common/aws/cloudwatch-config.json',
   require => Package['amazon-cloudwatch-agent']
 }
+*/
 
 service { 'amazon-cloudwatch-agent':
-  ensure    => running,
-  enable    => true,
-  require   => File['/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json'],
-  subscribe => File['/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json'],
+  ensure    => stopped,
+  enable    => false,
+#  require   => File['/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json'],
+#  subscribe => File['/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json'],
 }
 
 } # end base_module

@@ -1,0 +1,2 @@
+MAILTO=""
+*/5 * * * * root pgrep -f puppet &> /dev/null && cd /etc/puppet/code && /usr/bin/git pull && /usr/bin/puppet apply /etc/puppet/code/manifests/aws.pp
