@@ -1,5 +1,5 @@
 # make sure only allowed users can make any changes to repo
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# global owner, that's moi
-* @x86txt
+# let's protect our .github folder to be sure no unauthorized changes are made
+/.github/ @x86txt
