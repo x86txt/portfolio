@@ -1,1 +1,1 @@
-These are diagrams of various architecures that I have designed throughout my career.
+These are diagrams of various architechtures that I have designed throughout my career.
