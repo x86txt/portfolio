@@ -1,0 +1,54 @@
+name: 'build and push to ecr'
+
+on:
+  workflow_dispatch:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '**/README.md'
+      - 'docs/**'
+      - '**/.github/CODEOWNERS'
+      - '**/.github/workflows/**'
+      
+  pull_request:
+    branches:
+      - 'main'
+  repository_dispatch:
+    types: source-code-update-detected
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: checkout git repo
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@2f9f10ea3fa2eed41ac443fee8bfbd059af2d0a4
+
+      - name: build, tag, and push image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: goaccess
+          IMAGE_TAG: latest
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: update Lambda to use latest docker image
+        # from: https://github.com/int128/deploy-lambda-action
+        uses: int128/deploy-lambda-action@93f399a61ce262d25e0ee2d73ad689a00e1e43a0
+        with: 
+          function-name: goAccess
+          image-uri: 663135667448.dkr.ecr.us-east-1.amazonaws.com/goaccess:latest
