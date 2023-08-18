@@ -2,7 +2,7 @@
 
 #
 # brute force script to compile nginx with geoip2 module
-# todo: add download and extraction of geoip2 module
+# todo: add interactive download removal handler
 #
 
 latestVer=$1
