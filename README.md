@@ -6,7 +6,6 @@
 
 &nbsp;  
 &nbsp;  
-Matthew Evans: [shortform resume](https://cdn.secunit.io/short.pdf) | [detailed resume](https://cdn.secunit.io/long.pdf)
 
 | ISC2 | AWS | VMware | CompTIA |  
 |:------:|:-----:|:--------:|:---------:|  
