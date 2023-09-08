@@ -11,12 +11,12 @@ For this solution we will go with vanilla Kubernetes, but if this were a real pr
 
 ### Cluster Architecture
 
-Our cluster architecture will consist of a multi-cloud control plane to ensure we can continue to manage our fleet if we suffer a single cloud provider outage, as well as multi-cloud node runtimes to distribute workloads to the cloud provider of our choice.
+Our cluster architecture will consist of a multi-cloud control plane to ensure we can continue to manage our fleet if we suffer a single cloud provider outage, as well as multi-cloud node runtimes to distribute workloads to the cloud provider of our choice. 
+
+Here is an image I borrowed that shows (replace on-premise with Azure) how the architecture might look:
 
 <p align="center">
-
-![k8s multi-cloud example](./assets/k8s-multi.webp)
-
+<img src="./assets/k8s-multi.webp">
 </p>
 
 ### Networking
