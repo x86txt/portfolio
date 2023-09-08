@@ -8,4 +8,4 @@ In this section, we would identify risks, not only form a technical perspective,
 
 As a result of the discussions above, we should discuss and document all strategies for mitigation, or even accepting, identified risk. We should also strive to build in automated checks where possible to prevent regression as the environment organically grows.
 
-[<< Return](./index.md)
+[<< Return](./index.md#table-of-contents)
