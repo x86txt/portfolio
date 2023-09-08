@@ -37,10 +37,9 @@
    - [Identified Risks](./risk.md#identified-risks)
    - [Risk Mitigation Strategies](./risk.md#risk-mitigation-strategies)
 
-7. **Cost Estimation**
-   - Cloud Service Costs
-   - Kubernetes Management Costs
-   - Total Cost of Ownership (TCO)
+7. [**Cost Estimation**](./cost.md)<a id='cost'></a>
+   - [Cloud Service Costs](./cost.md#cloud-service-costs)
+   - [Total Cost of Ownership (TCO)](./cost.md#total-cost-of-ownership-tco)
 
 8. **Governance and Compliance**
    - Compliance Requirements
