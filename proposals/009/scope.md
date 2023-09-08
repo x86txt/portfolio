@@ -19,3 +19,5 @@ Without fully understanding all the intricacies of the Cyware Platform, we'll ju
 ### Out-of-Scope Activities
 
 We won't discuss necessary but unrelated items such as securing the cloud, securing the CI/CD solution, transit or egress costs, or playbooks for how to support the solution. Although those are extremely important and would be part of an actual solution proposal, they depend on details that are unknown to me at this point. There will be high-level suggestions for several of these topics, but plans for their ultimate implementation are beyond the scope of this project.
+
+[<< Return](./index.md)
