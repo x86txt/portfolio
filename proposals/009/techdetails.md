@@ -21,4 +21,4 @@ We won't get into the nuance of how to best architect cross-cloud networking, bu
 
 As with everything cloud, security will need to be carefully considered. Multi-Cloud deployments open multiple avenues of attack that are not well-known, so penetration testing, vulnerability scanning and management, as well as permissions and roles will have to be carefully considered.
 
-[<< Return](./index.md#table-of-contents)
+[<< Return](./index.md#tech)

@@ -16,4 +16,4 @@ Further, this allows Cyware to offer cheaper and more direct integration with a 
 
 Finally, allowing a customer to choose their cloud provider and region would greatly lessen the spider-web of global compliance requirements and allow Cyware to more rapidly serve customers around the world.
 
-[<< Return](./index.md#table-of-contents)
+[<< Return](./index.md#benefits)
