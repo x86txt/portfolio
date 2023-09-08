@@ -1,6 +1,6 @@
 ## Cost Estimation
 
-Costs are an area where we should spend quite a bit of time and that how the architecture is built will impact significantly. EC2 vs ECS, ECS EC2 vs ECS Fargate, S3 vs EBS, RDS vs DocumentDB - all of these will impact costs and so during the design phase, costs will need to be carefully considered.
+Costs are an area where we should spend quite a bit of time and where how the architecture is built will have a significant impact. EC2 vs ECS, ECS EC2 vs ECS Fargate, S3 vs EBS, RDS vs DocumentDB - all of these will impact costs and so during the design phase, costs will need to be carefully considered.
 
 ### Cloud Service Costs
 
