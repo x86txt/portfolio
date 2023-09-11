@@ -92,6 +92,7 @@ By providing two well-known and understood formats it will make upgrades and mai
 > **Note**
 > See the [Maintenance](#3-maintenance) section for additional color here.
 
+---
 ### Package Compilation and Validation
 
 The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. We would add a set of new CI/CD actions that execute a build of the OVA and container, run a strong, comprehensive set of tests to make sure both are able to be deployed successfully, initiates a boot of the applications within both and verifies the daemons start and respond to basic communication like an HTTPS request, and if a failure is experienced, raise an alert to the DevOps and SRE Teams for investigation.
@@ -103,6 +104,7 @@ We will structure the final build of both the OVA and container to coincide with
 
 Once the initial automation, pipelines, and testing environments are built out, unless there is an error, the burden on the Cyware DevOps and SRE teams should be virtually non-existent.
 
+---
 ### Deployment
 
 As outlined above, by limiting the packages we offer to OVA and a container, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into each supported environment. There are numerous services we can utilize for this and I've personally used GitBook. They have special hooks with git repos that help to automate the updates to product documentation. They also provide the hosting, which removes that burden from Cyware Staff.
@@ -122,6 +124,7 @@ For our OVA, we should limit our supported platforms to the three most popular h
 
 The instructions for deploying a container and/or OVA into these environments does not change frequently, so the maintenance and upkeep burden on Cyware staff would be extremely low. As we gain knowledge and expertise and learn what documentation tactics are successful, we can expand the number of on-prem and cloud environments if there is a need.
 
+---
 ### Observability
 
 As our observability platform, we will use the 'PLG Stack' aka [Prometheus](https://prometheus.io/), [Loki](https://grafana.com/oss/loki/), and [Grafana](https://grafana.com/grafana/). 
