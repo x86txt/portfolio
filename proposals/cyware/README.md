@@ -91,9 +91,10 @@ By providing two well-known and understood formats it will make upgrades and mai
 
 ### Package Compilation and Validation
 
-The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. We would add a new CI/CD action that executes a build of the OVA and container, runs a strong, comprehensive set of tests to make sure both are deployed correctly, initiates a boot of both and verifies the application daemons starts and respond to basic communication like an HTTPS request, and if a failure is experienced an alert will be raised to the DevOps and SRE Teams for investigation.
+The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. We would add a set of new CI/CD actions that execute a build of the OVA and container, run a strong, comprehensive set of tests to make sure both are able to be deployed successfully, initiates a boot of the applications within both and verifies the daemons start and respond to basic communication like an HTTPS request, and if a failure is experienced, raise an alert to the DevOps and SRE Teams for investigation.
 
-These automated tests will be considered a living document and never "complete." We will slowly add more testing to catch as many things proactively as we can.
+> **Note**
+> These automated tests will be considered a living document and never "complete." We will slowly add more testing to catch as many things proactively as we can.
 
 We will structure the final build of both the OVA and container to coincide with the SaaS release of our product. So, as we release a new version of the SaaS product, customers will have access to an updated OVA or container. The release of both will be part of the automated release process - for the OVA we will automate the upload of the new version to a AWS S3 bucket, fronted by Cloudfront or Cloudflare as a content-delivery network, and for the container, we will push it to Docker Hub, AWS Elastic Container Registry, and Azure Container Registry for direct client consumption.
 
