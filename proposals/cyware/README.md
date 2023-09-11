@@ -38,25 +38,25 @@
 
 ## Table of Contents
 
-[**1. Introduction**](#introduction)<a id='intro'></a>
+[**1. Introduction**](#1-introduction)<a id='intro'></a>
    - [Background, Context, Assumptions](#background-context-assumptions)
    - [Objectives](#objectives)
 
-[**2. Technical Details**](#technical-details)<a id='tech'></a>
+[**2. Technical Details**](#2-technical-details)<a id='tech'></a>
    - [Package Architecture](#package-architecture)
    - [Package Compilation and Validation](#package-compilation-and-validation)
    - [Deployment](#deployment)
    - [Observability](#observability)
 
-[**3. Maintenance**](#maintenance)<a id='maintenance'></a>
+[**3. Maintenance**](#2-maintenance)<a id='maintenance'></a>
 
-[**4. Compliance**](#compliance)<a id='compliance'></a>
+[**4. Compliance**](#4-compliance)<a id='compliance'></a>
 
-[**5. Support**](#support)<a id='support'></a>
+[**5. Support**](#5-support)<a id='support'></a>
 
-[**6. Value Adds**](#value-adds)<a id='value'></a>
+[**6. Value Adds**](#6-value-adds)<a id='value'></a>
 
-[**7. Closing**](#closing)<a id='closing'></a>
+[**7. Closing**](#7-closing)<a id='closing'></a>
 
 ***
 ## 1. Introduction
