@@ -65,12 +65,12 @@
 
 This proposal will serve to demonstrate one possible avenue of approach for instituting an application deploy solution that allows Cyware to deploy their application components into a customer-specified environment - this could be on-premise or cloud. For the purposes of this exercise, we will limit limit our cloud environments to AWS and Azure.
 
-This solution should put a strong emphasis on limiting or eliminating the support burden on Cyware Staff, an allowance should be made for Cyware and the customer to monitor and maintain the application, and the solution should seek to protect any proprietary application IP from viewing or exfiltration from the client's environment.
+This solution should put a strong emphasis on limiting or eliminating the support burden on Cyware Staff, there should be an observability solution included for the client, and I will make a suggestion for a potential value-add for any clients who may want "white glove" support.
 
 ### Objectives
 
 1. Deploy the application into a customer specified environment.
-2. Allow for Cyware staff or customer to deploy, initiate patches/upgrades, and monitor the environment.
+2. Allow the customer to deploy, initiate patches/upgrades, and monitor the environment.
 3. Minimize support burden on Cyware staff.
 
 
@@ -80,7 +80,9 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 
 ### Package Architecture
 
-For the application packaging, we will provide a container and an OVA for virtual machine environments. This will cover the vast majority of environments, independent of whether the customer wants to deploy into an on-premise datacenter or into a cloud provider. 
+For the application packaging, we will provide a container and an OVA that runs our containers for virtual machine environments. This will cover the vast majority of environments, independent of whether the customer wants to deploy into an on-premise datacenter or into a cloud provider. 
+
+Further, it makes upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and upgrade those, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers, or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM, such as the network stack, logging destination, service stop/start/restart, and of course upgrades. See the [Maintenance](#3-maintenance) section for additional color here.
 
 We can provide instructions for deploying into the following containerized environments, which should cover a large majority of potential use-cases:
 
@@ -95,13 +97,13 @@ For our OVA, we should limit our supported platforms to the three most popular h
 2. Microsoft Hyper-V
 3. Linux KVM
 
+The instructions for deploying a container and/or OVA into these environments does not change frequently, so the maintenance and upkeep burden on Cyware staff would be extremely low.
+
 ### Package Compilation and Validation
 
-By limiting our packaging to a container and an OVA, we cap the burden on the Cyware Staff.
+The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. We would add a new CI/CD action that executes a build of the OVA and container, runs a set of brief tests to make sure both are deployed correctly, boots both and verifies the application daemon starts and responds to basic communication like an HTTPS request, and if a failure is experienced an alert will be raised to the DevOps and SRE Teams for investigation.
 
-The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. As I am most familiar with GitHub Actions, I would add a new action that executes a build of the OVA and container, runs a set of brief tests to make sure both are deployed correctly, boots both and verifies the application daemon starts and responds to basic communication like an HTTPS request, and if a failure is experienced an alert will be raised to the DevOps and SRE Teams for investigation.
-
-We will structure the final build of both the OVA and container to coincide with the SaaS release of our product. So as we release a new version of the SaaS product, customers will have access to an updated OVA or container. The release of both will be part of the automated release process - for the OVA we will automate the upload of the new version to a simple AWS S3-backed content-delivery network, and for the container, we will push it to Docker Hub, AWS Elastic Container Registry, and Azure Container Registry.
+We will structure the final build of both the OVA and container to coincide with the SaaS release of our product. So as we release a new version of the SaaS product, customers will have access to an updated OVA or container. The release of both will be part of the automated release process - for the OVA we will automate the upload of the new version to a simple AWS S3-backed content-delivery network, and for the container, we will push it to Docker Hub, AWS Elastic Container Registry, and Azure Container Registry for client consumption.
 
 Once the initial automation, pipelines, and testing environments are built out, unless there is an error, the burden on the Cyware DevOps and SRE teams should be virtually non-existent.
 
@@ -112,27 +114,47 @@ As outlined above, by limiting the packages we offer to OVA and a container, and
 
 ### Observability
 
-As our observability platform, we will use the 'PLG Stack' aka Prometheus, Grafana, and Loki. For the backend, we can choose to deploy the commercial Grafana Cloud offering, or we can choose to roll-our own. I would ask my staff to work up a proposal with the pros, cons, and estimated expense of each solution. Depending on whether I have my own budget or I need to request project funding would dictate the next steps.
+As our observability platform, we will use the 'PLG Stack' aka [Prometheus](https://prometheus.io/), [Loki](https://grafana.com/oss/loki/), and [Grafana](https://grafana.com/grafana/). 
 
-The PLG Stack will give us insight into resource consumption, access to logs via log shipping, and the ability to generate *intelligent* alerts based on algorithmic analysis, rather than "dumb" metrics like CPU, or memory usage. 
+We would include this as part of the overall deployment, for internal client usage. How much functionality we wanted to expose to the customer would need to be discussed and the potential for generating support queries considered, but at a minimum we could include a set of pre-built dashboards to monitor resource usage and to proactively analyze application logs for issues that we know about. Exposing the ability for customers to enter an email address for alerts and the webhook functionality of Grafana would be very useful and limit any potential engagement of Cyware staff for assistance.
 
-On the application side we can affect this by integrating a single binary (the Grafana Agent) and then sending it back to a single PLG backend, but isolated per customer via tagging. This eliminates the complexity of needing to provision an independent instance for every customer.
+As we learn about new issues in the normal course of business, we would update the Grafana logic and include it via our standard version release cycle, included with the overall package release and brought to the customers attention via our release notes.
 
 ## 3. Maintenance
 
-This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested them extensively before release. If we have customers who want a more "white-glove" approach there is an opportunity to build out a Professional Services group within Cyware that can handle that, potentially with several other lucrative offerings. See the [Value Adds](#value-adds) section for more on this.
+This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested the latest version extensively before release. 
+
+As noted in the [Package Architecture](#package-architecture), if we wanted to provide a moe polished, professional look for the OVA, and this of course could be extended to our containerized clients as well, we could look at using one of the numerous off the shelf control panels, customized to just the functionality we wanted to expose, such as application start/stop, certificate injection, application upgrades (via containers under the hood), log file shipping, and/or reboot of the entire application VM. 
+
+I understand that Cyware has extensive Django experience, so we could build this out using any of the numerous 'admin panel' projects - something like the [Django Control Center](https://github.com/byashimov/django-controlcenter) would probably work great for our needs. If not, a generic Linux control panel like [Cockpit](https://cockpit-project.org/) or [TinyCP](https://tinycp.com/) could be skinned to look very professional and polished.
+
+If we have customers who want a more "white-glove" approach, there is an opportunity to build out a 'Professional Services' group within Cyware that can handle that and potentially several other offerings. See the [Value Adds](#value-adds) section for more on this.
 
 [<< Return](./README.md#maintenance)
 
 ## 4. Support
 
+By going with two well known packaging solutions - OVA and container - the bulk of the support burden will be in the up-front generation of a comprehensive knowledge base. However, this can be built-out concurrently with the provisioning and deployment of our testing environment to make better use of our staff's time.
+
+Additionally, if a customer chooses to take advantage of our PLG integration, we can generate webhooks that can take action - this could be a container redeploy or a VM restart. There is a world of possibility here depending on the specifics of the application. It will fall to our engineers and support staff to keep keep a database of these and then for the DevOps and SRE teams to turn those into an actionable webhook.
+
 [<< Return](./README.md#support)
 
 ## 5. Compliance
 
+I believe that compliance will largely be a non-issue, except for enabling centralized logging of client data into our datacenter. This would be a great discussion to have with Cyware Legal or Compliance Teams, but I feel we'd have to engineer a way to disable the logging. There are two approaches we can take, for the container just read an environment variable and turns it on or off, and for the OVA we would build-in a deploy-time switch that allowed the customer to enable or disable the log-shipping to us.
+
 [<< Return](./README.md#compliance)
 
-## 6. Value Adds
+## 6. Value Add
+
+For clients who want additional support from Cyware, we could offer the ability for their PLG stack to export data to a PLG Stack that we control. Ideally, this would be single-tenant for compliance reasons and would be negotiated as part of the sales process.
+
+The support and maintenance burden on Cyware staff can be kept to a minimum by utilizing Grafana Cloud and generating a re-usable Terraform module to provision a single-tenant environment for a customer, with a URL masked to be from Cyware - for example mattevans.support.cyware.com as opposed to tenant123.dfgt.cloud.grafana.com. We could work with our marketing and/or design team to create a generic skin for the portal, so unless a client looked deeply, it would look like part of our application stack.
+
+Another option would be to roll the PLG backend ourselves using the open source versions of Prometheus, Loki, and Grafana.
+
+As always, my team and I would do an analysis of both solutions, consider the pros/cons, as well as staff time, level of effort, and estimated on-going support burden, to determine which solution to pursue. That discussion would include our sales team and their opinion on whether this is something our clients would even want - it's probably not worth deploying if only a very small subset of clients are interested.
 
 [<< Return](./README.md#compliance)
 
