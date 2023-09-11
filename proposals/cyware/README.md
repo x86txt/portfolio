@@ -83,9 +83,9 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 For the application packaging, we will provide two primary solutions:
 
 1. A raw container for direct client consumption.
-  - this container will have instructions for deploying single components of the full Cyware suite, or the ability to deploy them in any combination as a stack.
+   - this container will have instructions for deploying single components of the full Cyware suite, or the ability to deploy them in any combination as a stack.
 2. An OVA that runs Linux and a container runtime.
-  - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality and also implement very basic state configuration.
+   - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality and also implement very basic state configuration.
 
 By providing two well-known and understood formats it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation), or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. See the [Maintenance](#3-maintenance) section for additional color here.
 
