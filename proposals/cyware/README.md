@@ -63,7 +63,7 @@
 
 ### Background, Context, Assumptions
 
-This proposal will serve to demonstrate one possible avenue of approach for instituting an application deploy solution that allows Cyware to deploy their application components into a customer-specified environment - this could be on-premise or cloud. For the purposes of this exercise, we will limit limit our cloud environments to AWS and Azure.
+This proposal will serve to demonstrate a possible avenue of approach for instituting an application deploy solution that allows Cyware to deploy their application components into a customer-specified environment - this could be on-premise or cloud. For the purposes of this exercise, we will limit limit our cloud environments to AWS and Azure.
 
 This solution should put a strong emphasis on limiting or eliminating the support burden on Cyware Staff, there should be an observability solution included for the client, there should be some allowance made for the client to manage basic administrative and maintenance tasks, and I will make a suggestion for a potential value-add for any clients who may want "white glove" support.
 
@@ -80,9 +80,14 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 
 ### Package Architecture
 
-For the application packaging, we will provide a container and an OVA that runs our containers for virtual machine environments, as this should cover most environments out there.
+For the application packaging, we will provide two primary solutions:
 
-By providing two well-known and understood formats, it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and upgrade those, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers, backed by clear, concise documentation, or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. See the [Maintenance](#3-maintenance) section for additional color here.
+1. A raw container for direct client consumption.
+  - this container will have instructions for deploying single components of the full Cyware suite, or the ability to deploy them in any combination as a stack.
+2. An OVA that runs Linux and a container runtime.
+  - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality and also implement very basic state configuration.
+
+By providing two well-known and understood formats it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation), or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. See the [Maintenance](#3-maintenance) section for additional color here.
 
 ### Package Compilation and Validation
 
