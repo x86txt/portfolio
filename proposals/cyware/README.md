@@ -1,11 +1,5 @@
 # Proposal for Cyware
 
-<p align="center">
-<img src="https://img.shields.io/badge/version-1.0-blue">
-<img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/x86txt/portfolio/cyware">
-<a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg?style=flat-square" alt="Attribution-ShareAlike 4.0 International"></a>
-</p>
-
 <table align="left">
     <tr>
     <th colspan="2" style="background-color:#343434">
@@ -25,6 +19,7 @@
         <td align="left">September 11th, 2023</td>
     </tr>
 </table>
+
 <br />
 <br />
 <br />
@@ -34,37 +29,37 @@
 <br />
 <br />
 <br />
+
+<p align="left">
+    <img src="https://img.shields.io/badge/version-1.0-blue">
+    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/x86txt/portfolio/cyware">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg?style=flat-square" alt="Attribution-ShareAlike 4.0 International"></a>
+</p>
 
 ## Table of Contents
 
-[**Introduction**](#introduction)<a id='intro'></a>
+[**1. Introduction**](#introduction)<a id='intro'></a>
    - [Background, Context, Assumptions](#background-context-assumptions)
    - [Objectives](#objectives)
 
-[**Technical Details**](#technical-details)<a id='tech'></a>
+[**2. Technical Details**](#technical-details)<a id='tech'></a>
    - [Package Architecture](#package-architecture)
    - [Package Compilation and Validation](#package-compilation-and-validation)
    - [Deployment](#deployment)
    - [Observability](#observability)
 
-[**Maintenance**](#maintenance)<a id='maintenance'></a>
+[**3. Maintenance**](#maintenance)<a id='maintenance'></a>
 
-This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested them extensively before release. If we have customers who want a more "white-glove" approach there is an opportunity to build out a Professional Services group within Cyware that can handle that, potentially with several other lucrative offerings. See the [Value Adds](#value-adds) section for more on this.
+[**4. Compliance**](#compliance)<a id='compliance'></a>
 
-[**Compliance**](#compliance)<a id='compliance'></a>
+[**5. Support**](#support)<a id='support'></a>
 
-[**Support**](#support)<a id='support'></a>
+[**6. Value Adds**](#value-adds)<a id='value'></a>
 
-[**Value Adds**](#value-adds)<a id='value'></a>
-
-[**Closing**](#closing)<a id='closing'></a>
-
-
-
+[**7. Closing**](#closing)<a id='closing'></a>
 
 ***
-
-## Introduction
+## 1. Introduction
 
 ### Background, Context, Assumptions
 
@@ -81,7 +76,7 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 
 [<< Return](./README.md#intro)
 
-## Technical Details
+## 2. Technical Details
 
 ### Package Architecture
 
@@ -123,22 +118,24 @@ The PLG Stack will give us insight into resource consumption, access to logs via
 
 On the application side we can affect this by integrating a single binary (the Grafana Agent) and then sending it back to a single PLG backend, but isolated per customer via tagging. This eliminates the complexity of needing to provision an independent instance for every customer.
 
-## Maintenance
+## 3. Maintenance
+
+This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested them extensively before release. If we have customers who want a more "white-glove" approach there is an opportunity to build out a Professional Services group within Cyware that can handle that, potentially with several other lucrative offerings. See the [Value Adds](#value-adds) section for more on this.
 
 [<< Return](./README.md#maintenance)
 
-## Support
+## 4. Support
 
 [<< Return](./README.md#support)
 
-## Compliance
+## 5. Compliance
 
 [<< Return](./README.md#compliance)
 
-## Value Adds
+## 6. Value Adds
 
 [<< Return](./README.md#compliance)
 
-## Closing
+## 7. Closing
 
 [<< Return](./README.md#closing)
