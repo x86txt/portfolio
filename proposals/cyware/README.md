@@ -87,7 +87,10 @@ For the application packaging, we will provide two primary solutions:
 2. An OVA that runs Linux, a container runtime, and then runs our applications as containers within.
    - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality and also implement very basic state configuration.
 
-By providing two well-known and understood formats it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation), or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. See the [Maintenance](#3-maintenance) section for additional color here.
+By providing two well-known and understood formats it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation), or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. 
+
+> **Note**
+> See the [Maintenance](#3-maintenance) section for additional color here.
 
 ### Package Compilation and Validation
 
@@ -122,6 +125,10 @@ The instructions for deploying a container and/or OVA into these environments do
 ### Observability
 
 As our observability platform, we will use the 'PLG Stack' aka [Prometheus](https://prometheus.io/), [Loki](https://grafana.com/oss/loki/), and [Grafana](https://grafana.com/grafana/). 
+
+<p align="center">
+<img src="./assets/grafana-node-stats.gif" alt="animated example of grafana node stats with logs" style="width:862px; height:427px; border: 1px solid black; box-shadow: 5px 5px 5px #999">
+</p>
 
 We would include this as part of the overall deployment, exposed for internal client usage. How much functionality we wanted to expose to the customer would need to be discussed and the potential for generating support queries considered, but at a minimum we could include a set of pre-built dashboards to monitor resource usage and to proactively analyze application logs for issues that we know about. 
 
