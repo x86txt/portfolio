@@ -6,8 +6,6 @@
 <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg?style=flat-square" alt="Attribution-ShareAlike 4.0 International"></a>
 </p>
 
-## Executive Summary
-
 <table align="left">
     <tr>
     <th colspan="2" style="background-color:#343434">
@@ -26,8 +24,16 @@
         <td align="right"><b>Date:</b></td>
         <td align="left">September 11th, 2023</td>
     </tr>
-</table><br />
-
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 ## Table of Contents
 
 [**Introduction**](#introduction)<a id='intro'></a>
