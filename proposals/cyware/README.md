@@ -67,6 +67,7 @@ This proposal will serve to demonstrate a possible avenue of approach for instit
 
 This solution should put a strong emphasis on limiting or eliminating the support burden on Cyware Staff, there should be an observability solution included for the client, there should be some allowance made for the client to manage basic administrative and maintenance tasks, and I will make a suggestion for a potential value-add for any clients who may want "white glove" support.
 
+---
 ### Objectives
 
 1. Deploy the application into a customer specified environment.
