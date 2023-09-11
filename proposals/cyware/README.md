@@ -8,11 +8,25 @@
 
 ## Executive Summary
 
-| | |
-|---|---|
-|__Project Title:__| Automated Application Deployment into Client Environment |
-|__Proposed By:__| Matthew Evans, Director of SRE Candidate |
-|__Date:__| September 11th, 2023
+<table align="left">
+    <tr>
+    <th colspan="2" style="background-color:#343434">
+        <h3>Executive Summary</h3>
+    </th>
+    </tr>
+    <tr>
+        <td align="right"><b>Project Title:</b></td>
+        <td align="left">Automated Application Deployment into Client Environment</td>
+    </tr>
+    <tr>
+        <td align="right"><b>Proposed By:</b></td>
+        <td align="left">Matthew Evans, Director of SRE Candidate</td>
+    </tr>
+    <tr>
+        <td align="right"><b>Date:</b></td>
+        <td align="left">September 11th, 2023</td>
+    </tr>
+</table><br />
 
 ## Table of Contents
 
