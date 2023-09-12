@@ -49,14 +49,26 @@
    - [Observability](#observability)
 
 [**3. Maintenance**](#2-maintenance)<a id='maintenance'></a>
+   - [Customer Perspective](#customer-perspective)
+   - [Cyware Perspective](#cyware-perspective)
 
 [**4. Compliance**](#4-compliance)<a id='compliance'></a>
+   - [Customer Considerations](#customer-considerations)
+   - [Cyware Considerations](#cyware-considerations)
 
 [**5. Support**](#5-support)<a id='support'></a>
+   - [Standard](#standard)
+   - [White Glove Service](#white-glove)
 
 [**6. Value Adds**](#6-value-adds)<a id='value'></a>
+   - [White Glove]
+   - [Professional Services]
 
 [**7. Closing**](#7-closing)<a id='closing'></a>
+   - [Summary](#summary-overview)
+   - [Noteworthy Info](#noteworthy-info)
+   - [My Thoughts](#my-thoughts)
+
 
 ---
 ## 1. Introduction
@@ -106,7 +118,7 @@ Once the initial automation, pipelines, and testing environments are built out, 
 
 ### <img src="./assets/github.svg?sanitize=true"> Deployment
 
-As outlined above, by limiting the packages we offer to OVA and a container, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into each supported environment. There are numerous services we can utilize for this and I've personally used GitBook. They have special hooks with git repos that help to automate the updates to product documentation. They also provide the hosting, which removes that burden from Cyware Staff.
+As outlined above, by limiting the packages we offer to OVA and a container, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into each supported environment. 
 
 We can provide instructions via a knowledgebase for deploying into the following containerized environments, which should cover a large majority of potential use-cases:
 
@@ -139,6 +151,7 @@ As we learn about new issues in the normal course of business by running our Saa
 
 ## 3. Maintenance
 
+### Customer Perspective
 This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested the latest version extensively before release. 
 
 As noted in the [Package Architecture](#package-architecture) section, if we wanted to provide a more polished, professional look for the OVA, and this of course could be extended to our containerized clients as well, we could look at using one of the numerous off the shelf control panels, customized to just the functionality we wanted to expose, such as application start/stop, certificate injection, application upgrades (via containers under the hood), log file shipping, and/or reboot of the entire application VM. 
@@ -148,11 +161,19 @@ As noted in the [Package Architecture](#package-architecture) section, if we wan
 
 If we have customers who want a more "white-glove" approach, there is an opportunity to build out a 'Professional Services' group within Cyware that can handle that and potentially several other offerings. See the [Value Adds](#value-adds) section for more on this.
 
+### Cyware Perspective
+
 [<< Return](./README.md#maintenance)
 
 ## 4. Support
 
+### Standard
+
+### White Glove
+
 By going with two well known packaging solutions - OVA and container - the bulk of the support burden will be in the up-front generation of a comprehensive knowledge base. However, this can be built-out concurrently with the provisioning and deployment of our testing environment to make better use of our staff's time.
+
+For building the knowledgebase, I would recommend GitBook. They utilize a git-like collaboration flow and provide hosting as part of the package, offloading that responsibility from the Cyware staff. If Cyware has an existing tool for public documentation, I would recommend we utilize that to avoid duplication of effort keep our support posture presented in a more unified manner to our customers.
 
 Since we are including an observability stack, if we are contacted with issues we can have customers send us exactly the information we need, which will greatly speed MTTR (Mean Time to Resolution). For example, we can ask the customer to send us a screenshot of a particular dashboard, to export a subset or even an entire set of logs, or open a screen-sharing session so we can see the environment directly.
 
@@ -160,24 +181,58 @@ Since we are including an observability stack, if we are contacted with issues w
 
 ## 5. Compliance
 
+### Customer Considerations
+
 This would be a great discussion to have with Cyware Legal or Compliance Teams, but with as long as we choose sane defaults such as requiring HTTPS, making sure disk at-rest in the default, in-transit encryption is in-use between all the components, provide a way for our clients to upload and make use of their own certificates, and allow them to export their logs to the destination of their choice, most compliance situations should be covered. 
 
 We can address any one-off requirements as they arise and will make sure we keep a section in our knowledgebase in case any other customers are also subject to the same requirement.
 
+### Cyware Considerations
+
 [<< Return](./README.md#compliance)
 
-## 6. Value Add
+## 6. Value Adds
+
+### White Glove
 
 For clients who want additional support from Cyware, we could offer the ability for their PLG stack to export resource or log data to a PLG Stack that we control. Ideally, this would be single-tenant for compliance reasons and would be negotiated as part of the sales process.
 
-For this particular value add, the support and maintenance burden on Cyware staff can be kept to a minimum by utilizing Grafana Cloud and generating a re-usable [Terraform module](https://grafana.com/docs/grafana-cloud/developer-resources/infrastructure-as-code/terraform/terraform-cloud-stack/) to provision a single-tenant environment for a customer, with a URL masked to be from Cyware - for example mattevans.support.cyware.com as opposed to tenant123.dfgt.cloud.grafana.com. We could work with our marketing and/or design team to create a generic skin for the portal, so unless a client looked deeply, it would look like part of our application stack.
+For this particular value add, the support and maintenance burden on Cyware staff can be kept to a minimum by utilizing Grafana Cloud and generating a re-usable [Terraform module](https://grafana.com/docs/grafana-cloud/developer-resources/infrastructure-as-code/terraform/terraform-cloud-stack/) to provision a single-tenant environment for a customer, with a URL masked to be from Cyware - for example [https://mattevans.support.cyware.com](https://mattevans.support.cyware.com) as opposed to [https://tenant123.dfgt.cloud.grafana.com](https://tenant123.dfgt.cloud.grafana.com). We could work with our marketing and/or design team to create a generic skin for the portal, so unless a client looked deeply, it would look and function like part of our application stack.
 
 Another option would be to roll the PLG backend ourselves using the open source versions of Prometheus, Loki, and Grafana and automate it via Terraform or even Ansible.
 
 As always, my team and I would do an analysis of both solutions, consider the pros/cons, as well as staff time, level of effort, and estimated on-going support burden, to determine which solution to pursue. That discussion would include our sales team and their opinion on whether this is something our clients would even want - it's probably not worth deploying if only a very small subset of clients are interested.
 
+### Professional Services
+
+Another thought would be to start a *Professional Services* division that offers these white glove services, as well as consulting and training on our platform, and perhaps even information security in general. We could tap internal expertise and leverage existing leadership (I have built and led professional services divisions in the past) until such a time as the revenue it is generating warrants bringing in dedicated leadership. I have used professional services from organizations like MongoDB, RSA, and Puppet and they seemed as-if they generated an immense amount of revenue with not very much overhead.
+
 [<< Return](./README.md#compliance)
 
 ## 7. Closing
+
+### Summary Overview
+
+We would offer two deployment methods, one via a container and another via an OVA, which would consist of an off-the-shelf Linux distro with a container runtime, running the same containers that we build and offer for stand-alone deployment. 
+
+Inside the OVA we could package the PLG stack for monitoring and observability and include documentation in our knowledgebase for any stand-alone container consumers who might want to benefit from it as well. We would explore including a simple control panel based on a modified Admin Panel project, which would allow OVA customers to perform basic administrative functions for the deployed VM. If a customer deploys the OVA we could incorporate automated remediations for known-issues via PLG Actions (via simple bash scripts or Ansible), making sure to highlight those new automated remediations in our release notes.
+
+The build of the container and OVA would be integrated into our existing CI/CD pipelines and would include robust automated testing for both compilation, deployment, and application runtime. 
+
+The push to our CDN and container repositories would likewise integrated into our existing pipelines, both needing sign-off from any necessary stakeholders before any release. This would ensure that any release of the container or new download of the OVA would coincide with a release of our SaaS platform, helping to eliminate fragmentation and the burden of having to support multiple versions of the product.
+
+We would develop a comprehensive public knowledgebase that we could create concurrently as we build out the necessary testing infrastructure. This documentation would be kept updated and revised as new information comes in - either via as we run our SaaS platform, or as clients reach out for support.
+
+### My Thoughts
+
+I hope this proposal not only feels complete, well-thoughts out, and forward thinking, but shows my thought process when approached to solve a business problem. I am a firm believer in robust documentation that is clear, concise, and visually pleasing *will be read and used* by end-users. Two examples of this are included below - I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our security posture, but be something non-techies would actually want to *read.*
+
+<a href="./assets/Prometheus%20Infrastructure%20Overview.pdf"><img src="./assets/adobe.svg">Example 1: Infrastructure Overview</a>
+
+<a href="./assets/Prometheus Security Overview.pdf"><img src="./assets/adobe.svg">Example 2: Security Overview</a>
+
+I'd like to close by saying that throughout both conversations with Jordan and Brandon I have become excited for what Cyware is building. I feel that as a hands-on leader who has led several successful teams and always been reviewed extremely highly by my teammates, I bring a lot of value and experience to Cyware, and I can help be a part of the broader organization and take Cyware to the next-level.
+
+Finally, if you haven't seen how others feel about my technical skills or leadership ability, I would encourage you to check-out my [LinkedIn Recommendations](https://www.linkedin.com/in/mevanssecurity/).
 
 [<< Return](./README.md#closing)
