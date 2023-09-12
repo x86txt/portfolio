@@ -39,8 +39,8 @@
 ## Table of Contents
 
 [**1. Introduction**](#1-introduction)<a id='intro'></a>
-   - [Background, Context, Assumptions](#💭-background-context-assumptions)
-   - [Objectives](#🎯-objectives)
+   - [Background, Context, Assumptions](#thoughts)
+   - [Objectives](#object)
 
 [**2. Technical Details**](#2-technical-details)<a id='tech'></a>
    - [Package Architecture](#package-architecture)
@@ -73,13 +73,13 @@
 ---
 ## 1. Introduction
 
-### :thought_balloon: Background, Context, Assumptions
+### :thought_balloon: Background, Context, Assumptions<a id='thoughts'></a>
 
 This proposal will serve to demonstrate a possible avenue of approach for instituting an application deploy solution that allows Cyware to deploy their application components into a customer-specified environment - this could be on-premise or cloud. For the purposes of this exercise, we will limit limit our cloud environments to AWS and Azure.
 
 This solution should put a strong emphasis on limiting or eliminating the support burden on Cyware Staff, there should be an observability solution included for the client, there should be some allowance made for the client to manage basic administrative and maintenance tasks, and I will make a suggestion for a potential value-add for any clients who may want "white glove" support.
 
-### :dart: Objectives
+### :dart: Objectives<a id='object'></a>
 
 1. Deploy the application into a customer specified environment.
 2. Allow the customer to deploy, initiate patches/upgrades, and monitor the environment.
