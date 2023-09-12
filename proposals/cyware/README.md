@@ -52,13 +52,13 @@
    - [Customer Perspective](#custper)
    - [Cyware Perspective](#cywareper)
 
-[**4. Compliance**](#4-compliance)<a id='compliance'></a>
-   - [Customer Considerations](#custcon)
-   - [Cyware Considerations](#cywarecon)
-
-[**5. Support**](#5-support)<a id='support'></a>
+[**4. Support**](#4-support)<a id='compliance'></a>
    - [Standard](#supportstan)
    - [White Glove Service](#supportwhite)
+
+[**5. Compliance**](#5-compliance)<a id='support'></a>
+   - [Customer Considerations](#custcon)
+   - [Cyware Considerations](#cywarecon)
 
 [**6. Value Adds**](#6-value-adds)<a id='value'></a>
    - [White Glove](#valwhite)
