@@ -65,7 +65,7 @@
    - [Professional Services](#professional-services)
 
 [**7. Closing**](#7-closing)<a id='closing'></a>
-   - [Summary](#summary-overview)
+   - [Summary Overview of Entire Solution](#summary-overview-of-entire-solution)
    - [Noteworthy Info](#noteworthy-info)
    - [My Thoughts](#my-thoughts)
 
@@ -98,9 +98,9 @@ For the application packaging, we will provide two primary solutions:
 1. A raw container for direct client consumption.
    - this container will have instructions for deploying single components of the full Cyware suite, or the ability to deploy them in any combination as a stack.
 2. An OVA that runs Linux, a container runtime, and then runs our applications as containers within.
-   - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality and also implement very basic state configuration.
+   - running a set of containers rather than installing applications directly into the OS eliminates almost all the nuance that would come with a client's environment and allows us to add administrative functionality.
 
-By providing two well-known and understood formats it will make upgrades and maintenance straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation), or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. 
+By providing two well-known and understood formats it will make upgrades and maintenance much more straightforward - our containerized customers will know how to pull the latest versions of a container and perform an upgrade, and for our OVA clients, we can either give them a limited SSH account that allows them to connect and upgrade the containers (backed by clear, concise documentation) and perform a limited set of common, administrative duties, or if we want a more professional look, build a small "administrative" GUI that allows the client to manage certain aspects of the VM and perform application upgrades. 
 
 > **Note**
 > See the [Maintenance](#3-maintenance) section for additional color here.
@@ -118,9 +118,9 @@ Once the initial automation, pipelines, and testing environments are built out, 
 
 ### <img src="./assets/github.svg?sanitize=true"> Deployment
 
-As outlined above, by limiting the packages we offer to OVA and a container, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into each supported environment. 
+As outlined above, by limiting the packages we offer to OVA and containerized formats, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into a supported environment. DUe to the commonalities shared by almost all container runtimes, we will be able to support many more environments unofficially as well.
 
-We can provide instructions via a knowledgebase for deploying into the following containerized environments, which should cover a large majority of potential use-cases:
+We will provide instructions via a knowledgebase for deploying into the following containerized environments, which should cover a large majority of potential use-cases:
 
 1. Docker and Docker Compose
 2. Kubernetes
@@ -133,7 +133,7 @@ For our OVA, we should limit our supported platforms to the three most popular h
 2. Microsoft Hyper-V
 3. Linux KVM
 
-The instructions for deploying a container and/or OVA into these environments does not change frequently, so the maintenance and upkeep burden on Cyware staff would be extremely low. As we gain knowledge and expertise and learn what documentation tactics are successful, we can expand the number of on-prem and cloud environments if there is a need.
+The instructions for deploying a container and/or OVA into these environments does not change frequently, so the maintenance and upkeep burden on Cyware staff would be extremely low. As we gain knowledge, expertise, and learn what documentations are successful, we can expand the number of on-prem and cloud environments, if we find there is a need.
 
 ### <img src="./assets/grafana.svg?sanitize=true"> Observability
 
@@ -143,18 +143,19 @@ As our observability platform, we will use the 'PLG Stack' aka [Prometheus](http
 <img src="./assets/grafana-node-stats.gif" alt="animated example of grafana node stats with logs" style="width:862px; height:427px; border: 1px solid black; box-shadow: 5px 5px 5px #999">
 </p>
 
-We would include this as part of the overall deployment, exposed for internal client usage. How much functionality we wanted to expose to the customer would need to be discussed and the potential for generating support queries considered, but at a minimum we could include a set of pre-built dashboards to monitor resource usage and to proactively analyze application logs for issues that we know about. 
+We would include this as part of the overall deployment, exposed for internal client usage. How much functionality we wanted to expose to the customer would need to be discussed and the potential for generating support queries considered, but at a minimum we could include a set of pre-built dashboards to monitor resource usage and to proactively analyze application logs for problematic situations or conditions that we are aware of. 
 
-Exposing the ability for customers to enter an email address for alerts and the webhook functionality of Grafana would be very useful and limit the need to engage Cyware staff for assistance.
+Exposing the ability for customers to enter an email address for alerts along with the webhook functionality of Grafana would be very useful and further limit the need to engage Cyware staff for assistance.
 
-As we learn about new issues in the normal course of business by running our SaaS application, we would update the Grafana logic and include it via our standard version release cycle, included with the overall package release and brought to the customers attention via our release notes.
+As we learn about new issues in the normal course of business by running our SaaS application and interaction with self-deployed customers, we would update the Grafana logic and include it via our standard version release cycle, included with the overall package releases, and brought to the customers attention via our release notes. Drawing attention to this should incentivize customers to remain up-to-date and related, being able to send update notifications to our customers would be a very worthwhile pursuit and something we could explore to further enhance this offering.
 
 ## 3. Maintenance
 
 ### Customer Perspective
-This solution would offload the majority of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested the latest version extensively before release. 
 
-As noted in the [Package Architecture](#package-architecture) section, if we wanted to provide a more polished, professional look for the OVA, and this of course could be extended to our containerized clients as well, we could look at using one of the numerous off the shelf control panels, customized to just the functionality we wanted to expose, such as application start/stop, certificate injection, application upgrades (via containers under the hood), log file shipping, and/or reboot of the entire application VM. 
+This solution would offload virtually all of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested the latest version extensively before release. 
+
+As noted in the [Package Architecture](#package-architecture) section, if we wanted to provide a more polished, professional look for the OVA, and this of course could be extended to our containerized clients as well, we could look at using one of the numerous off the shelf control panels, customized to only the functionality we wanted to expose. For example functions such as application start/stop, certificate injection, application upgrades (via containers under the hood), log file shipping, backup/restore, and/or reboot of the entire application VM.
 
 > **Note**
 > I understand that Cyware has extensive Django experience, so we could build this out using any of the numerous 'admin panel' projects - something like the [Django Control Center](https://github.com/byashimov/django-controlcenter) would probably work great for our needs. If not, a generic Linux control panel like [Cockpit](https://cockpit-project.org/) or [TinyCP](https://tinycp.com/) could be skinned to look very professional and polished.
@@ -163,19 +164,23 @@ If we have customers who want a more "white-glove" approach, there is an opportu
 
 ### Cyware Perspective
 
+From our perspective, the primary maintenance burden should not be customer-interactions, but rather in making sure we keep our documentation fresh, constantly seek to improve our automated testing pipelines to proactively catch as many failure or error scenarios as possible, and of course work to improve any automated remediations we can build into the OVA solution.
+
 [<< Return](./README.md#maintenance)
 
 ## 4. Support
 
 ### Standard
 
+Standard support will be handled by a set of well-organized knowledgebase articles. By going with two well known packaging solutions - OVA and container - the bulk of the support burden will be in the up-front generation of a comprehensive knowledge base. However, this can be built-out concurrently with the provisioning and deployment of our testing environment to make better use of our staff's time. I'm a firm believer that if you put the effort into making your documentation useful, do not let it 'rot' and become stale, and make is visually pleasing, people will use it. 
+
+For building the knowledgebase, I would recommend GitBook. They utilize a git-like collaboration flow and provide hosting as part of the package, offloading that responsibility from the Cyware staff. However, if Cyware has an existing tool for public documentation, I would recommend we utilize that to avoid duplication of effort that comes with the maintenance of two independent systems, and would also serve to keep our external communication presented in a more unified manner.
+
+By including an observability stack, we can include relevant dashboards and generate alerts for known problematic situations, surfacing those to the client themselves, before they develop into an issue that results in application failure.
+
 ### White Glove
 
-By going with two well known packaging solutions - OVA and container - the bulk of the support burden will be in the up-front generation of a comprehensive knowledge base. However, this can be built-out concurrently with the provisioning and deployment of our testing environment to make better use of our staff's time.
-
-For building the knowledgebase, I would recommend GitBook. They utilize a git-like collaboration flow and provide hosting as part of the package, offloading that responsibility from the Cyware staff. If Cyware has an existing tool for public documentation, I would recommend we utilize that to avoid duplication of effort keep our support posture presented in a more unified manner to our customers.
-
-Since we are including an observability stack, if we are contacted with issues we can have customers send us exactly the information we need, which will greatly speed MTTR (Mean Time to Resolution). For example, we can ask the customer to send us a screenshot of a particular dashboard, to export a subset or even an entire set of logs, or open a screen-sharing session so we can see the environment directly.
+I believe there will always be a need to customer who want more hand-holding, aka "white glove" support. If we are amenable to this as an organization, I think we should dive in and build out a full-blown Professional Service Group. Please see the [Value Adds](#6-value-adds) section for more information around my thoughts.
 
 [<< Return](./README.md#support)
 
@@ -189,6 +194,8 @@ We can address any one-off requirements as they arise and will make sure we keep
 
 ### Cyware Considerations
 
+By the nature of the solution being deployed into the customer's cloud or datacenter, Cyware should not have any compliance exposure. If we move forward with a value-added log ingestion option for clients who want white-glove service, we would want to make sure to pursue the single-tenant PLG stack suggestion for customers. We could then make sure the environments are complaint with any standards our customers need like SOC2, ISO27001, PCI, and many others. Keeping a very verbose due-diligence questionnaire (DDQ) on-hand and up-to-date would serve to answer many compliance related auditor questions in advance. 
+
 [<< Return](./README.md#compliance)
 
 ## 6. Value Adds
@@ -201,17 +208,17 @@ For this particular value add, the support and maintenance burden on Cyware staf
 
 Another option would be to roll the PLG backend ourselves using the open source versions of Prometheus, Loki, and Grafana and automate it via Terraform or even Ansible.
 
-As always, my team and I would do an analysis of both solutions, consider the pros/cons, as well as staff time, level of effort, and estimated on-going support burden, to determine which solution to pursue. That discussion would include our sales team and their opinion on whether this is something our clients would even want - it's probably not worth deploying if only a very small subset of clients are interested.
+As always, my team and I would do an analysis of both solutions, consider the pros/cons, as well as staff time, level of effort, and estimated on-going support burden to determine which solution to pursue. That discussion would include our sales team and their opinion on whether this is something our clients would even want - it's probably not worth deploying if only a very small subset of clients are interested.
 
 ### Professional Services
 
-Another thought would be to start a *Professional Services* division that offers these white glove services, as well as consulting and training on our platform, and perhaps even information security in general. We could tap internal expertise and leverage existing leadership (I have built and led professional services divisions in the past) until such a time as the revenue it is generating warrants bringing in dedicated leadership. I have used professional services from organizations like MongoDB, RSA, and Puppet and they seemed as-if they generated an immense amount of revenue with not very much overhead.
+Another thought would be to start a *Professional Services* group within Cyware that offers these white glove services, as well as consulting and training on our platform, and perhaps even information security in general. We could tap internal expertise and leverage existing leadership (I have built and led professional services divisions in the past) until such a time as the revenue it is generating warrants bringing in dedicated leadership. I have used professional services from organizations like MongoDB, RSA, IBM, VMware, AWS, and Puppet and they seemed as-if they generated an immense amount of revenue with not very much overhead.
 
 [<< Return](./README.md#compliance)
 
 ## 7. Closing
 
-### Summary Overview
+### Summary Overview of Entire Solution
 
 We would offer two deployment methods, one via a container and another via an OVA, which would consist of an off-the-shelf Linux distro with a container runtime, running the same containers that we build and offer for stand-alone deployment. 
 
