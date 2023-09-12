@@ -277,7 +277,7 @@ Finally, we would develop a comprehensive public knowledgebase that we create co
 
 I hope this proposal not only feels complete, well-thought out, and forward thinking, but shows my thought process when approached to solve a business problem. I am a firm believer that robust documentation which is clear, concise, and visually pleasing *will be read and used* by end-users and two examples of this are included below. 
 
-> For context, I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our infrastructure and security posture, but be something non-techies would actually want to *read.*  
+> For context, I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our infrastructure and security posture, but be something non-techies would actually want to *read.* The following is what I worked with our marketing and design team to build. 
 >
 > <a href="./assets/Prometheus%20Infrastructure%20Overview.pdf"><img src="./assets/adobe.svg">Example 1: Infrastructure Overview</a>  
 > <a href="./assets/Prometheus Security Overview.pdf"><img src="./assets/adobe.svg">Example 2: Security Overview</a>
