@@ -61,8 +61,8 @@
    - [White Glove Service](#white-glove)
 
 [**6. Value Adds**](#6-value-adds)<a id='value'></a>
-   - [White Glove]
-   - [Professional Services]
+   - [White Glove](#white-glove)
+   - [Professional Services](#professional-services)
 
 [**7. Closing**](#7-closing)<a id='closing'></a>
    - [Summary](#summary-overview)
