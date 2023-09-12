@@ -282,7 +282,7 @@ I hope this proposal not only feels complete, well-thought out, and forward thin
 > <a href="./assets/Prometheus%20Infrastructure%20Overview.pdf"><img src="./assets/adobe.svg">Example 1: Infrastructure Overview</a>  
 > <a href="./assets/Prometheus Security Overview.pdf"><img src="./assets/adobe.svg">Example 2: Security Overview</a>
 
-Throughout this process I have become excited to be a part of Cyware. I feel that as a humble, hands-on leader who has led several successful teams and always been reviewed extremely highly by my team, I bring a lot of value and experience, and I can help be a part of the broader organization that is taking Cyware to the next-level. 
+Throughout this process I have grown excited to be a part of Cyware. I feel that as a humble, hands-on leader who has led several successful teams and always been reviewed extremely highly by my team, I bring a lot of value and experience, and I can help be a part of the broader organization that is taking Cyware to the next-level. 
 
 I have close to two decades of infrastructure, cloud, DevOps, SRE, and Security experience, as well as an infectious enthusiasm for what I do. I've worked for several startups and so I understand the challenges and find they push me to be my best. 
 
