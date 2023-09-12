@@ -49,25 +49,24 @@
    - [Observability](#observe)
 
 [**3. Maintenance**](#2-maintenance)<a id='maintenance'></a>
-   - [Customer Perspective](#customer-perspective)
-   - [Cyware Perspective](#cyware-perspective)
+   - [Customer Perspective](#custper)
+   - [Cyware Perspective](#cywareper)
 
 [**4. Compliance**](#4-compliance)<a id='compliance'></a>
-   - [Customer Considerations](#customer-considerations)
-   - [Cyware Considerations](#cyware-considerations)
+   - [Customer Considerations](#custcon)
+   - [Cyware Considerations](#cywarecon)
 
 [**5. Support**](#5-support)<a id='support'></a>
-   - [Standard](#standard)
-   - [White Glove Service](#white-glove)
+   - [Standard](#supportstan)
+   - [White Glove Service](#supportwhite)
 
 [**6. Value Adds**](#6-value-adds)<a id='value'></a>
-   - [White Glove](#white-glove)
-   - [Professional Services](#professional-services)
+   - [White Glove](#valwhite)
+   - [Professional Services](#valprof)
 
 [**7. Closing**](#7-closing)<a id='closing'></a>
-   - [Summary Overview of Entire Solution](#summary-overview-of-entire-solution)
-   - [Noteworthy Info](#noteworthy-info)
-   - [My Thoughts](#my-thoughts)
+   - [Summary Overview of Entire Solution](#closesum)
+   - [My Thoughts](#closethoughts)
 
 
 ---
@@ -145,13 +144,14 @@ As our observability platform, we will use the 'PLG Stack' aka [Prometheus](http
 
 We would include this as part of the overall deployment, exposed for internal client usage. How much functionality we wanted to expose to the customer would need to be discussed and the potential for generating support queries considered, but at a minimum we could include a set of pre-built dashboards to monitor resource usage and to proactively analyze application logs for problematic situations or conditions that we are aware of. 
 
-Exposing the ability for customers to enter an email address for alerts along with the webhook functionality of Grafana would be very useful and further limit the need to engage Cyware staff for assistance.
+> **Important**
+> Exposing the ability for customers to enter an email address for alerts along with the webhook functionality of Grafana would be very useful and further limit the need to engage Cyware staff for assistance.
 
 As we learn about new issues in the normal course of business by running our SaaS application and interaction with self-deployed customers, we would update the Grafana logic and include it via our standard version release cycle, included with the overall package releases, and brought to the customers attention via our release notes. Drawing attention to this should incentivize customers to remain up-to-date and related, being able to send update notifications to our customers would be a very worthwhile pursuit and something we could explore to further enhance this offering.
 
 ## 3. Maintenance
 
-### Customer Perspective
+### :wrench: Customer Perspective<a id='custper'></a>
 
 This solution would offload virtually all of the maintenance burden to the client and give Cyware confidence that if a customer does perform an upgrade, we have tested the latest version extensively before release. 
 
@@ -162,7 +162,7 @@ As noted in the [Package Architecture](#package-architecture) section, if we wan
 
 If we have customers who want a more "white-glove" approach, there is an opportunity to build out a 'Professional Services' group within Cyware that can handle that and potentially several other offerings. See the [Value Adds](#value-adds) section for more on this.
 
-### Cyware Perspective
+### :nut_and_bolt: Cyware Perspective<a id='cywareper'></a>
 
 From our perspective, the primary maintenance burden should not be customer-interactions, but rather in making sure we keep our documentation fresh, constantly seek to improve our automated testing pipelines to proactively catch as many failure or error scenarios as possible, and of course work to improve any automated remediations we can build into the OVA solution.
 
@@ -170,7 +170,7 @@ From our perspective, the primary maintenance burden should not be customer-inte
 
 ## 4. Support
 
-### Standard
+### :repeat: Standard<a id='supportstan'></a>
 
 Standard support will be handled by a set of well-organized knowledgebase articles. By going with two well known packaging solutions - OVA and container - the bulk of the support burden will be in the up-front generation of a comprehensive knowledge base. However, this can be built-out concurrently with the provisioning and deployment of our testing environment to make better use of our staff's time. I'm a firm believer that if you put the effort into making your documentation useful, do not let it 'rot' and become stale, and make is visually pleasing, people will use it. 
 
@@ -178,21 +178,21 @@ For building the knowledgebase, I would recommend GitBook. They utilize a git-li
 
 By including an observability stack, we can include relevant dashboards and generate alerts for known problematic situations, surfacing those to the client themselves, before they develop into an issue that results in application failure.
 
-### White Glove
+### :necktie: White Glove Service<a id='supportwhite'></a>
 
-I believe there will always be a need to customer who want more hand-holding, aka "white glove" support. If we are amenable to this as an organization, I think we should dive in and build out a full-blown Professional Service Group. Please see the [Value Adds](#6-value-adds) section for more information around my thoughts.
+I believe there will always be a need to serve customers who want more hand-holding, aka "white glove" support. If we are amenable to this as an organization, I think we should dive in and build out a full-blown Professional Service Group. Please see the [Value Adds](#6-value-adds) section for more information around my thoughts.
 
 [<< Return](./README.md#support)
 
 ## 5. Compliance
 
-### Customer Considerations
+### :briefcase: Customer Considerations<a id='custcon'></a>
 
 This would be a great discussion to have with Cyware Legal or Compliance Teams, but with as long as we choose sane defaults such as requiring HTTPS, making sure disk at-rest in the default, in-transit encryption is in-use between all the components, provide a way for our clients to upload and make use of their own certificates, and allow them to export their logs to the destination of their choice, most compliance situations should be covered. 
 
 We can address any one-off requirements as they arise and will make sure we keep a section in our knowledgebase in case any other customers are also subject to the same requirement.
 
-### Cyware Considerations
+### :exclamation: Cyware Considerations<a id='cywarecon'></a>
 
 By the nature of the solution being deployed into the customer's cloud or datacenter, Cyware should not have any compliance exposure. If we move forward with a value-added log ingestion option for clients who want white-glove service, we would want to make sure to pursue the single-tenant PLG stack suggestion for customers. We could then make sure the environments are complaint with any standards our customers need like SOC2, ISO27001, PCI, and many others. Keeping a very verbose due-diligence questionnaire (DDQ) on-hand and up-to-date would serve to answer many compliance related auditor questions in advance. 
 
@@ -200,7 +200,7 @@ By the nature of the solution being deployed into the customer's cloud or datace
 
 ## 6. Value Adds
 
-### White Glove
+### :necktie: White Glove<a id='valwhite'></a>
 
 For clients who want additional support from Cyware, we could offer the ability for their PLG stack to export resource or log data to a PLG Stack that we control. Ideally, this would be single-tenant for compliance reasons and would be negotiated as part of the sales process.
 
@@ -210,7 +210,7 @@ Another option would be to roll the PLG backend ourselves using the open source 
 
 As always, my team and I would do an analysis of both solutions, consider the pros/cons, as well as staff time, level of effort, and estimated on-going support burden to determine which solution to pursue. That discussion would include our sales team and their opinion on whether this is something our clients would even want - it's probably not worth deploying if only a very small subset of clients are interested.
 
-### Professional Services
+### :moneybag: Professional Services<a id='valprof'></a>
 
 Another thought would be to start a *Professional Services* group within Cyware that offers these white glove services, as well as consulting and training on our platform, and perhaps even information security in general. We could tap internal expertise and leverage existing leadership (I have built and led professional services divisions in the past) until such a time as the revenue it is generating warrants bringing in dedicated leadership. I have used professional services from organizations like MongoDB, RSA, IBM, VMware, AWS, and Puppet and they seemed as-if they generated an immense amount of revenue with not very much overhead.
 
@@ -218,7 +218,7 @@ Another thought would be to start a *Professional Services* group within Cyware 
 
 ## 7. Closing
 
-### Summary Overview of Entire Solution
+### :raised_hands: Summary Overview of Entire Solution<a id='closesum'></a>
 
 We would offer two deployment methods, one via a container and another via an OVA, which would consist of an off-the-shelf Linux distro with a container runtime, running the same containers that we build and offer for stand-alone deployment. 
 
@@ -230,7 +230,7 @@ The push to our CDN and container repositories would likewise integrated into ou
 
 We would develop a comprehensive public knowledgebase that we could create concurrently as we build out the necessary testing infrastructure. This documentation would be kept updated and revised as new information comes in - either via as we run our SaaS platform, or as clients reach out for support.
 
-### My Thoughts
+### :wave: My Thoughts<a id='closethoughts'></a>
 
 I hope this proposal not only feels complete, well-thoughts out, and forward thinking, but shows my thought process when approached to solve a business problem. I am a firm believer in robust documentation that is clear, concise, and visually pleasing *will be read and used* by end-users. Two examples of this are included below - I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our security posture, but be something non-techies would actually want to *read.*
 
