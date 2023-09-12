@@ -43,10 +43,10 @@
    - [Objectives](#object)
 
 [**2. Technical Details**](#2-technical-details)<a id='tech'></a>
-   - [Package Architecture](#package-architecture)
-   - [Package Compilation and Validation](#✅-package-compilation-and-validation)
+   - [Package Architecture](#packagearch)
+   - [Package Compilation and Validation](#packagecompilation)
    - [Deployment](#deployment)
-   - [Observability](#observability)
+   - [Observability](#observe)
 
 [**3. Maintenance**](#2-maintenance)<a id='maintenance'></a>
    - [Customer Perspective](#customer-perspective)
@@ -91,7 +91,7 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 
 ## 2. Technical Details
 
-### <img src="./assets/docker.svg?sanitize=true"> Package Architecture
+### <img src="./assets/docker.svg?sanitize=true"> Package Architecture<a id='packagearch'></a>
 
 For the application packaging, we will provide two primary solutions:
 
@@ -105,7 +105,7 @@ By providing two well-known and understood formats it will make upgrades and mai
 > **Note**
 > See the [Maintenance](#3-maintenance) section for additional color here.
 
-### :white_check_mark: Package Compilation and Validation
+### :white_check_mark: Package Compilation and Validation<a id='packagecompilation'></a>
 
 The compilation of the OVA and the container will be automated and tied into our existing SDLC CI/CD pipelines. We would add a set of new CI/CD actions that execute a build of the OVA and container, run a strong, comprehensive set of tests to make sure both are able to be deployed successfully, initiates a boot of the applications within both and verifies the daemons start and respond to basic communication like an HTTPS request, and if a failure is experienced, raise an alert to the DevOps and SRE Teams for investigation.
 
@@ -116,7 +116,7 @@ We will structure the final build of both the OVA and container to coincide with
 
 Once the initial automation, pipelines, and testing environments are built out, unless there is an error, the burden on the Cyware DevOps and SRE teams should be virtually non-existent.
 
-### <img src="./assets/github.svg?sanitize=true"> Deployment
+### <img src="./assets/github.svg?sanitize=true"> Deployment<a id='deployment'></a>
 
 As outlined above, by limiting the packages we offer to OVA and containerized formats, and building a robust set of automated testing pipelines, we can compile a knowledge base for our customers that covers how to deploy the OVA or container into a supported environment. DUe to the commonalities shared by almost all container runtimes, we will be able to support many more environments unofficially as well.
 
@@ -135,7 +135,7 @@ For our OVA, we should limit our supported platforms to the three most popular h
 
 The instructions for deploying a container and/or OVA into these environments does not change frequently, so the maintenance and upkeep burden on Cyware staff would be extremely low. As we gain knowledge, expertise, and learn what documentations are successful, we can expand the number of on-prem and cloud environments, if we find there is a need.
 
-### <img src="./assets/grafana.svg?sanitize=true"> Observability
+### <img src="./assets/grafana.svg?sanitize=true"> Observability<a id='observe'></a>
 
 As our observability platform, we will use the 'PLG Stack' aka [Prometheus](https://prometheus.io/), [Loki](https://grafana.com/oss/loki/), and [Grafana](https://grafana.com/grafana/). 
 
