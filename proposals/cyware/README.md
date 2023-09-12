@@ -232,14 +232,14 @@ We would develop a comprehensive public knowledgebase that we could create concu
 
 ### :wave: My Thoughts<a id='closethoughts'></a>
 
-I hope this proposal not only feels complete, well-thoughts out, and forward thinking, but shows my thought process when approached to solve a business problem. I am a firm believer in robust documentation that is clear, concise, and visually pleasing *will be read and used* by end-users. Two examples of this are included below - I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our security posture, but be something non-techies would actually want to *read.*
+I hope this proposal not only feels complete, well-thought out, and forward thinking, but shows my thought process when approached to solve a business problem. I am a firm believer that robust documentation which is clear, concise, and visually pleasing *will be read and used* by end-users. Two examples of this are included below - I was approached by the Business Development Team at Prometheus, asking for something they could present to a non-technical audience that would clearly convey our infrastructure and security posture, but be something non-techies would actually want to *read.*
 
 <a href="./assets/Prometheus%20Infrastructure%20Overview.pdf"><img src="./assets/adobe.svg">Example 1: Infrastructure Overview</a>
 
 <a href="./assets/Prometheus Security Overview.pdf"><img src="./assets/adobe.svg">Example 2: Security Overview</a>
 
-I'd like to close by saying that throughout both conversations with Jordan and Brandon I have become excited for what Cyware is building. I feel that as a hands-on leader who has led several successful teams and always been reviewed extremely highly by my teammates, I bring a lot of value and experience to Cyware, and I can help be a part of the broader organization and take Cyware to the next-level.
+I'd like to close by saying that throughout both conversations with Jordan and Brandon I have become excited to be a part of Cyware. I feel that as a hands-on leader who has led several successful teams and always been reviewed extremely highly by my team, I bring a lot of value and experience, and I can help be a part of the broader organization and help take Cyware to the next-level.
 
-Finally, if you haven't seen how others feel about my technical skills or leadership ability, I would encourage you to check-out my [LinkedIn Recommendations](https://www.linkedin.com/in/mevanssecurity/).
+Finally, if you haven't seen how others feel about my technical skills or leadership ability, I would encourage you to check-out my [LinkedIn Recommendations](https://www.linkedin.com/in/mevanssecurity/). I'm happy to provide personal and professional references to you as well!
 
 [<< Return](./README.md#closing)
