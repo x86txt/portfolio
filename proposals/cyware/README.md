@@ -39,12 +39,12 @@
 ## Table of Contents
 
 [**1. Introduction**](#1-introduction)<a id='intro'></a>
-   - [Background, Context, Assumptions]
-   - [Objectives]
+   - [Background, Context, Assumptions](#💭-background-context-assumptions)
+   - [Objectives](#🎯-objectives)
 
 [**2. Technical Details**](#2-technical-details)<a id='tech'></a>
    - [Package Architecture](#package-architecture)
-   - [Package Compilation and Validation](#package-compilation-and-validation)
+   - [Package Compilation and Validation](#✅-package-compilation-and-validation)
    - [Deployment](#deployment)
    - [Observability](#observability)
 
