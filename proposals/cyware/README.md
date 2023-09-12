@@ -56,15 +56,17 @@
    - [Standard](#supportstan)
    - [White Glove Service](#supportwhite)
 
-[**5. Compliance**](#5-compliance)<a id='support'></a>
+[**5. Security**](#5-security)<a id='securitysec'></a>
+
+[**6. Compliance**](#5-compliance)<a id='support'></a>
    - [Customer Considerations](#custcon)
    - [Cyware Considerations](#cywarecon)
 
-[**6. Value Adds**](#6-value-adds)<a id='value'></a>
+[**7. Value Adds**](#6-value-adds)<a id='value'></a>
    - [White Glove](#valwhite)
    - [Professional Services](#valprof)
 
-[**7. Closing**](#7-closing)<a id='closing'></a>
+[**8. Closing**](#7-closing)<a id='closing'></a>
    - [Summary Overview of Entire Solution](#closesum)
    - [My Thoughts](#closethoughts)
 
@@ -192,7 +194,23 @@ I believe there will always be a need to serve customers who want more hand-hold
 [<< Return](./README.md#support)
 
 ***
-## 5. Compliance
+
+### 5. Security<a id='securitysec'></a>
+
+Security for the solution will be handled in a few ways, primarily by following best-practices.
+
+1. Updates will be easy and straight-forward to release and since our entire packaging and release pipeline will be automated, can be put out as frequently as we desire.
+2. Follow all container best practices
+   - such as running the containers and embedded applications as limited users
+   - limiting the attack surface to necessary services only
+   - disabling unused components
+   - use 'cap drop' to drop all capabilities and only add back the ones necessary for functionality
+   - ensure security modules (AppArmor, SELinux, etc.) are enabled and functional and any other best practice that are specific to the applications and runtime we are using.
+3. For the OVA, implement a state configuration tool (Ansible, Puppet) that ensures that any modifications would be quickly reported and then reverted.
+4. Encrypt 'all-the-things!' at-rest and in-transit.
+5. Include an auditing and alerting dashboard in the PLG stack, to promote visibility to the customer.
+
+## 6. Compliance
 
 ### :briefcase: Customer Considerations<a id='custcon'></a>
 
@@ -218,7 +236,7 @@ By the nature of the solution being deployed into the customer's cloud or datace
 [<< Return](./README.md#compliance)
 
 ***
-## 6. Value Adds
+## 7. Value Adds
 
 ### :necktie: White Glove<a id='valwhite'></a>
 
@@ -238,7 +256,7 @@ Another thought would be to start a *Professional Services* group within Cyware 
 [<< Return](./README.md#compliance)
 
 ***
-## 7. Closing
+## 8. Closing
 
 ### :raised_hands: Summary Overview of Entire Solution<a id='closesum'></a>
 
