@@ -282,11 +282,17 @@ I hope this proposal not only feels complete, well-thought out, and forward thin
 > <a href="./assets/Prometheus%20Infrastructure%20Overview.pdf"><img src="./assets/adobe.svg">Example 1: Infrastructure Overview</a>  
 > <a href="./assets/Prometheus Security Overview.pdf"><img src="./assets/adobe.svg">Example 2: Security Overview</a>
 
-I'd like to close by saying I have become excited to be a part of Cyware. I feel that as a humble, hands-on leader who has led several successful teams and always been reviewed extremely highly by my team, I bring a lot of value and experience, and I can help be a part of the broader organization and take Cyware to the next-level. 
+I'd like to close by saying I have become excited to be a part of Cyware. I feel that as a humble, hands-on leader who has led several successful teams and always been reviewed extremely highly by my team, I bring a lot of value and experience, and I can help be a part of the broader organization that is taking Cyware to the next-level. 
 
-I have close to two decades of infrastructure, cloud, DevOps, SRE, and Security experience, as well as an infectious enthusiasm for what I do. I take immense pride in my work and set correspondingly high-standards for myself and my team, but also understand work/life balance and take care to avoid burnout, both of myself and my team. I possess a 'lead from the front, down-in-the-trenches with my team' leadership style, am skilled at conflict resolution, communicate well with tchnical and non-technical colleagues, and have a strong sense of emotional intelligence. I believe in fostering a strong and collaborative culture, which it is very evident Cyware already has!
+I have close to two decades of infrastructure, cloud, DevOps, SRE, and Security experience, as well as an infectious enthusiasm for what I do. I've worked for several startups and so I understand the challenges and find they push me to be my best. 
 
-Finally, if you haven't seen how others feel about my technical skills or leadership ability, I would encourage you to check-out my [LinkedIn Recommendations](https://www.linkedin.com/in/mevanssecurity/). I'm happy to provide personal and professional references to you as well!
+I take immense pride in my work and set correspondingly high-standards for myself and my team, but also understand work/life balance and take care to avoid burnout, both of myself and my team. I possess a 'roll up my sleeves and lead by example' leadership style, am skilled at conflict resolution, communicate well with technical and non-technical colleagues, and have a strong foundation of emotional intelligence. 
+
+Mentorship is extremely important to me and I believe in empowering my team to take on difficult tasks, as success and ownership foster a sense of pride. When confronted with failure, I view it as a learning opportunity and always conduct after-actions and blameless post-mortems. 
+
+I strongly believe in the concept of *"a rising tide lifts all ships,"* by which I mean mentorship and responsibility make employees stronger, which helps the organization as a whole. Finally, I believe in fostering a strong and collaborative culture across the entire organization, which it is very evident Cyware already has!
+
+In closing, if you haven't seen how others feel about my technical skills or leadership ability, I would encourage you to check-out my [LinkedIn Recommendations](https://www.linkedin.com/in/mevanssecurity/). I'm happy to provide personal and professional references to you as well!
 
 Thank you for the opportunity and I hope we speak soon!
 
