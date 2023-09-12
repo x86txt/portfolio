@@ -39,8 +39,8 @@
 ## Table of Contents
 
 [**1. Introduction**](#1-introduction)<a id='intro'></a>
-   - [Background, Context, Assumptions](#background-context-assumptions)
-   - [Objectives](#objectives)
+   - [Background, Context, Assumptions]
+   - [Objectives]
 
 [**2. Technical Details**](#2-technical-details)<a id='tech'></a>
    - [Package Architecture](#package-architecture)
