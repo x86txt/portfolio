@@ -87,7 +87,7 @@ This solution should put a strong emphasis on limiting or eliminating the suppor
 
 [<< Return](./README.md#intro)
 
-
+***
 ## 2. Technical Details
 
 ### <img src="./assets/docker.svg?sanitize=true"> Package Architecture<a id='packagearch'></a>
