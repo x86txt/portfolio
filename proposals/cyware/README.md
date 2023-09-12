@@ -197,7 +197,7 @@ I believe there will always be a need to serve customers who want more hand-hold
 
 ### 5. Security<a id='securitysec'></a>
 
-Security for the solution will be handled by following best-practices at build and run time and then exposing logs and an audit-ready dashboard to the customer.
+Security for the solution will be handled by following best-practices at build and run time, comprehensive testing and vulnerability scanning in our build and deploy pipelines, and exposing logs and an audit-ready dashboard to the customer for actionable items.
 
 1. Updates will be easy and straight-forward to release and since our entire packaging and release pipeline will be automated, can be put out as frequently as we desire.
 2. Follow all container best practices
