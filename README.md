@@ -17,8 +17,8 @@ My job is to bridge technological grand canyons. I can do this because I have a 
 
 ## 🎓 Certifications
 <p>
-<img src="https://img.shields.io/badge/CISSP-darkgreen.svg?link=https://www.credly.com/badges/0e9019e7-545f-4243-9d8f-83c14c4dea7a/public_url" style="margin-bottom: 4px;" height="30px">
-<img src="https://img.shields.io/badge/Solutions_Architect_Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white?link=https://www.credly.com/badges/85f570be-a1a9-47e1-93d4-bfd8ee4e4e09/public_url" style="margin-bottom: 4px;" height="30px">
+<a href="https://www.credly.com/badges/0e9019e7-545f-4243-9d8f-83c14c4dea7a/public_url"><img src="https://img.shields.io/badge/CISSP-darkgreen.svg" style="margin-bottom: 4px;" height="30px"></a>
+<a href="https://www.credly.com/badges/85f570be-a1a9-47e1-93d4-bfd8ee4e4e09/public_url"><img src="https://img.shields.io/badge/Solutions_Architect_Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" style="margin-bottom: 4px;" height="30px"></a>
 
 ## 💻 Skills
 <p>
