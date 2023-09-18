@@ -1,8 +1,8 @@
-# Hi there 👋, My name is Matthew Evans
+# Hi there 👋, my name is Matthew Evans
 
 <img width="100%" src="/docs/assets/images/github/github-header-image.png" alt="my banner">
 
-I'm a tech geek that enjoys challenging problems, mentoring others, and learning new technologies. I bring a K.I.S.S. approach to everything I do.
+I'm a tech geek that enjoys challenging problems, mentoring others, and learning new technologies. I bring a [K.I.S.S.](https://en.wikipedia.org/wiki/KISS_principle) approach to everything I do.
 
 My job is to bridge technological grand canyons. I can do this because I have a foundation of over 20 years of experience in IT, more than 15 years of experience in security, and over a decade of experience in cloud computing. I've worked with startups, small businesses, and large enterprises. I build top-performing teams, I manage budgets, I'm adept at communicating complex topics to all levels of an organization, and I do it all while rolling up my sleeves and remaining a doer. I love what I do and my enthusiasm is often found to be contagious across the organization.
 
